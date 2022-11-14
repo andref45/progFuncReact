@@ -34,7 +34,7 @@ println(par._2)
 //¿Cómo declarar su tipo?
 //El tipo depende del número de elementos y el tipo de dato de cada uno, así:
 val student = (1, "Abad Ana")
-val datos =  ("jorgaf", "M", 45, 95.2, true)
+val datos = ("jorgaf", "M", 45, 95.2, true)
 val student: Tuple2[Int, String]
 val datos : Tuple5[String, Char, Int, Double, Boolean]
 //Funciones para tuplas
@@ -92,3 +92,17 @@ myList.sorted(Ordering.Int.reverse)
 //de izquierda a derecha
 myList.foldLeft(0)((x, y )=> x+y)
 myList.foldLeft(0)(_ + _)
+
+//foldRight:
+//Aplica un operador binario a un valor inicial y a todos los elementos de esta secuencia
+//de derecha a izquierda
+myList.foldRight(0)((x, y ) => x+y)
+myList.foldRight(0)(_ + _)
+
+//foldLeft ejemplo
+//crear una función para calcular el promedio de los elementos de una lista
+//de números reales
+def average(valores : Seq[Double]) : Double = {
+  val t = valores.foldLeft((0.0, 0))((acc, currVal) => (acc._1 + currVal, acc._2 + 1))
+    t._1 / t._2
+}
