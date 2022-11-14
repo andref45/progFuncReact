@@ -15,8 +15,8 @@ def clasifica(valores: List[Double]): Unit = {
   val avg = promedio(valores)
 
   (1 to 3).foreach(i =>
-  println(valores.filter(x=>
-  x>= (avg - i*s) && x <=(avg + i * s)).size))
+  println(valores.count(x =>
+    x >= (avg - i * s) && x <= (avg + i * s))))
 }
 clasifica(nros)
 
@@ -54,5 +54,41 @@ student.canEqual((1, "Abad Ana"))
   * Tanto ñas estructuras de datos, como los datos en sí son manipulados de forma diferente
   en los paradigmas de programación
   * Iniciaremos con la noción de una colección de datos
-  * 
-* */
+  * Conjuntos
+  * Secuencias
+  Listas:
+  * Es un elemento similar a los arreglos
+  * Diferencias de un arreglo -> Son inmutables, listas en scala se representan como listas enlazadas
+  * Declaraciones
+ */
+val values = List(42, 31, 36, 40, 43)
+val names = List("Jorge", "René", "Ma. del Carmen", "Nelson")
+/*Operaciones
+Count
+Exists
+filter
+ForAll
+Length
+Map
+Max, maxBy
+Min, minBy
+Product
+Size
+*/
+val myList= List(10, 20, 30, 40, 50, 60)
+myList.isEmpty
+myList.drop(2) //Borrar n primeros
+myList.dropWhile(_< 25) // Borra mientras la condición
+myList.slice(2, 4)
+myList.tail
+myList.take(3)
+myList.takeWhile(_ < 30)
+myList.sorted
+myList.sorted(Ordering.Int.reverse)
+
+//Otras operaciones
+//foldLeft:
+//Aplica un operador binario a un valor inicial y a todos los elementos de esta secuencia
+//de izquierda a derecha
+myList.foldLeft(0)((x, y )=> x+y)
+myList.foldLeft(0)(_ + _)
