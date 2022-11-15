@@ -106,3 +106,19 @@ def average(valores : Seq[Double]) : Double = {
   val t = valores.foldLeft((0.0, 0))((acc, currVal) => (acc._1 + currVal, acc._2 + 1))
     t._1 / t._2
 }
+def average2(valores : Seq[Double]) : Double = {
+  val t = valores.foldLeft((0.0, 0)) { (acc, currVal) =>
+    val sum = acc._1 + currVal
+    val cont = acc._2 + 1
+    printf("Suma: %f - contador: %d%n", sum, cont)
+    (sum, cont)
+  }
+  t._1 + t._2
+}
+
+//Zip
+// se usa para fusionar una colección con la actual y el resultado es una
+// colección de tuplas de 2 con elementos de ambas colecciones
+
+val myList = List(10, 20, 30, 40, 50, 60)
+val nom = List("Guido", "Armando", "Patricio", "Manuel", "Germania", "")
