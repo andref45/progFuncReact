@@ -51,7 +51,7 @@ student.canEqual((1, "Abad Ana"))
 /*
   *Datos inmutables
   * La programación implica la manipulación de datos
-  * Tanto ñas estructuras de datos, como los datos en sí son manipulados de forma diferente
+  * Tanto las estructuras de datos, como los datos en sí son manipulados de forma diferente
   en los paradigmas de programación
   * Iniciaremos con la noción de una colección de datos
   * Conjuntos
