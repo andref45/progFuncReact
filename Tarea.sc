@@ -9,7 +9,9 @@ def promedioGoles(lista  : Seq[Int]) : Double = {
    a._1 / a._2
 }
 printf("El promedio de goles es: %.2f\n", promedioGoles(goles))
-
+//val g = goleadores.map(_._2).map(_.toDouble)
+//val average = (values : List[Double]) => values.sum/values.length
+//val avgGol = average(g)
 //Pregunta 2
 //El nombre del jugador con más goles
 println("El jugador con más goles es:\n" + goleadores.maxBy(_._2)._1)
