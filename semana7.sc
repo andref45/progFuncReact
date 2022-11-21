@@ -19,4 +19,25 @@ conNuevo.intersect(conjunto)
 //K - Representa a las claves
 // V - representa a los valores
 Map(("apples", 3), ("oranges", 2), ("pears", 0))
-Map(("apples" -> 3), ("oranges" -> 2), ("pears" -> 0))
+Map("apples" -> 3, "oranges" -> 2, "pears" -> 0)
+//convertir
+//Método toMap: convertir una Lista de tuplas en un mapa
+List(("apples", 3), ("oranges", 2), ("pears", 0)).toMap
+
+//Método toSeq: convertir un Map en una secuencia de pares (tuplas 2)
+Map(("apples", 3), ("oranges", 2), ("pears", 0)).toSeq
+Map("apples" -> 3, "oranges" -> 2, "pears" -> 0).toSeq
+
+//Map en funciones
+val fruitBasket = Map("apples" -> 3, "oranges" -> 2, "pears" -> 0)
+
+fruitBasket.map {
+  case (fruit, count) => count * 2
+}
+//Otro modo
+fruitBasket.map{case(fruit, count) => count * 2}
+
+fruitBasket.map{case (fruit, count) => (fruit, count * 2)}
+
+fruitBasket.map{case(fruit, count) => (fruit, count, count * 2)}.
+  map{case (fruit, _, count2) => (fruit, count2/2)}.toMap
