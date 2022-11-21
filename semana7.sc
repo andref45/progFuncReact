@@ -1,14 +1,13 @@
+//Tuplas y listas
 val nombres = List("Oscar Becerra", "Luis Amarilla", "Michael Estrada", "Fidel Martínez", "Gonzalo Mastriani",
   "Leonel Vides", "Rodrigo Aguirre", "Carlos Garces", "Jonathan Borja")
 val goles = List(17, 16, 16, 16, 13, 13, 12, 12, 11)
 val goleadores = nombres zip goles
 //Pregunta 1
 //El promedio de goles
-def promedioGoles(lista  : Seq[Int]) : Double = {
-  val a = lista.foldLeft((0.0, 0))((acc, currVal) => (acc._1 + currVal, acc._2 + 1))
-   a._1 / a._2
-}
-printf("El promedio de goles es: %.2f\n", promedioGoles(goles))
+val g = goleadores.map(_._2).map(_.toDouble)
+val average = (values : List[Double]) => values.sum/values.length
+val avgGol = average(g)
 
 //Pregunta 2
 //El nombre del jugador con más goles

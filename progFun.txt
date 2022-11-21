@@ -1,0 +1,63 @@
+Double getAverage (List<Integer> nums){
+	int sum = 0;
+	double avg = 0.0;
+	for (int num: nums) {
+		sum += num;
+	}
+	avg = sum / (double)nums.size();
+	return avg;
+}
+
+int contGreaterThan(double avg, List <Integer> nums) {
+	int cont = 0;
+	for(int num : nums){
+		if (num>= avg){
+			cont ++;
+		}
+	}
+	return cont;
+}
+
+int contLessThan(double avg, List <Integer> nums) {
+	int cont = 0;
+	for(int num : nums){
+		if (num < avg){
+			cont ++;
+		}
+	}
+	return cont;
+}
+
+var data = List.of(...)
+
+
+
+
+
+Java 
+
+var nums = List.of(1, 2, 3, 4, 5);                                                                                
+    nums.stream().map(n -> n * 10).toList()                                                                           
+    record Tuple(int x, int y){}                                                                                      
+    nums.stream().map(n -> new Tuple(n, n * n)).toList()                                                              
+    nums.stream().filter(n -> n % 2 == 0).toList()                                                                    
+    nums.stream().reduce(1, (n1, n2) -> n1 * n2)           
+
+
+Scala
+
+val nums = List(1, 2, 3, 4, 5)                                                                                    
+    nums.map(_ * 10)                                                                                                  
+    nums.map(n => (n, n * n))                                                                                         
+    nums.filter(n => n % 2 == 0)                                                                                      
+    nums.reduce((n1, n2) => n1 * n2)  
+
+
+Python 
+
+lst = [1, 2, 3, 4, 5]                                                                                             
+    list(map(lambda n: n * 10, lst))                                                                                  
+    list(map(lambda n: (n, n * n), lst))                                                                              
+    list(filter(lambda n : n % 2 == 0, lst))                                                                          
+    from functools import reduce                                                                                      
+    reduce(lambda x, y : x * y, lst, 1)
