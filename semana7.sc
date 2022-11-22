@@ -70,10 +70,16 @@ val nombres = List("Oscar Becerra", "Luis Amarilla", "Michael Estrada", "Fidel M
 val goles = List(17, 16, 16, 16, 13, 13, 12, 12, 11)
 val goleadores = nombres zip goles
 goleadores.groupBy{case (_, goals) => goals }
-
+//Cuantos hicieron los mismos goles
 goleadores.groupBy(row => row  match {
   case(_, goals) => goals
 }).map(row => row match {
   case (goles, lista) => (goles, lista.size)
 }).toList.sortBy(_._2)
 
+// Número de goles más comúm
+goleadores.groupBy(row => row match {
+  case(_, goals) =>
+}).map(row => row match{
+  case (goles, lista) => (goles, lista.size)
+}).toList.sortBy(_._2).reverse
