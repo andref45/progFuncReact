@@ -75,4 +75,9 @@ toInt("1") match {
 }
 
 
-//Either / Left / Right 
+//Either / Left / Right
+//Ejemplo
+def divideXByY( x : Int, y: Int ) : Either[String, Int] = {
+  if(y == 0) Left("No se puede dividir por 0")
+  else  Right(x/y)
+}
