@@ -81,3 +81,11 @@ def divideXByY( x : Int, y: Int ) : Either[String, Int] = {
   if(y == 0) Left("No se puede dividir por 0")
   else  Right(x/y)
 }
+val x = divideXByY(1, 1).right.getOrElse(0)
+val y = divideXByY(1, 0).right.getOrElse(0)
+
+divideXByY(1, 0) match {
+  case Left(s) => println("Answer: " + s)
+  case Right(i) => println("Answer: " + i)
+}
+//
